@@ -1,0 +1,9 @@
+challenge,technique,reason
+Very small dataset (119 images),Transfer learning + augmentation chosen by cross-validation,Pretrained features and extra variety reduce overfitting; CV avoids picking by noise
+Single 18-image val/test set is very noisy,Grouped stratified k-fold CV for all decisions,"One image equals about 5.6% accuracy, so single-split rankings are unreliable"
+Near-duplicate photos of the same leaf,Embedding-similarity groups (threshold checked visually) + StratifiedGroupKFold,Prevents the same leaf appearing in train and test (data leakage)
+Image size and background differ by class,"Metadata-only baseline, strong augmentation checks, Grad-CAM",Detects whether the model could use shortcuts instead of lesions
+Extreme aspect ratios (up to about 3.4:1),"Compared squash, letterbox and wide inputs",Squashing distorts lesions; the best input was chosen by CV
+Overfitting,"Dropout, EarlyStopping, ReduceLROnPlateau, frozen backbone first",Stops at the best generalisation point
+Different preprocessing per backbone,Backbone-specific preprocess_input,Matches the statistics used in pretraining
+Production model has no spare data to validate,Retrain on all images with CV-derived epoch count,Uses every image while keeping the CV estimate as the expected performance

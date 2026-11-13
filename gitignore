@@ -1,0 +1,21 @@
+# Dataset (download from the link in README)
+Bacterial leaf blight/
+Brown spot/
+Leaf smut/
+rice_leaf_data/
+PRCP-1001-RiceLeaf.zip
+
+# Python / Jupyter
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Environments
+ML_env/
+.venv/
+venv/
+.env
+
+# OS / editor
+.DS_Store
+.vscode/

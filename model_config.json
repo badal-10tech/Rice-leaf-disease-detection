@@ -1,0 +1,1 @@
+{"classes": ["Bacterial leaf blight", "Brown spot", "Leaf smut", "images"], "input_mode": "squash_224", "input_shape": [224, 224, 3], "backbone": "MobileNetV2", "augmentation": "B_flip"}
